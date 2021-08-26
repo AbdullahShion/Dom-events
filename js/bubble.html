@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+<body>
+    <h2>Event Bubble Vai</h2>
+    <section id="ami">
+        <h4>Bobble vai list</h4>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li id="second-bubble" class="item">Incidunt, deleniti.</li>
+            <li class="item">Tenetur, ullam?</li>
+            <li class="item">Sint, voluptatem.</li>
+            <li class="item">Porro, maiores!</li>
+            <li class="item">Vero, sit.</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('second-bubble').addEventListener('click',function(event){
+            console.log('second item clicked');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('second-bubble').addEventListener('click',function(event){
+            console.log('second2 item clicked');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('second-bubble').addEventListener('click',function(event){
+            console.log('second3 item clicked');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('second-bubble').addEventListener('click',function(event){
+            console.log('second4 item clicked');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('second-bubble').addEventListener('click',function(event){
+            console.log('second5 item clicked');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('list-container').addEventListener('click',function(){
+            console.log('ul clicked');
+        })
+        document.getElementById('ami').addEventListener('click',function(){
+            console.log('section clicked');
+        })
+    </script>
+</body>
+</html>
